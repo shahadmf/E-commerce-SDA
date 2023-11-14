@@ -5,6 +5,7 @@ import { rateLimit } from 'express-rate-limit';
 
 
 import { dev } from './config/config.js';
+import productRouter from './routes/productRoutes.js';
 
 const app = express();
 const port = dev.app.port || 8080;
@@ -23,6 +24,7 @@ app.use(limiter);
 
 app.use(cors());
 app.use(morgan('dev'));
+app.use("/products", productRouter);
 
 app.get("/", (req, res) => {
     res.send('Just wanted to check!')
