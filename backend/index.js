@@ -15,7 +15,7 @@ app.listen(port, () => {
 })
 
 const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minute
+    windowMs: 1 * 60 * 1000, // 15 minute
     limit: 100, // 100 requests,
     message: "Too many requests",
 });
